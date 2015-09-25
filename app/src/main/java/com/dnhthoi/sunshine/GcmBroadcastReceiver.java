@@ -26,10 +26,12 @@ public class GcmBroadcastReceiver extends BroadcastReceiver {
 
     public GcmBroadcastReceiver() {
         super();
+        Log.e("LOG_TAG::","strat broadcastReceiver");
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.e(LOG_TAG,"Start recieive....");
         Bundle extras = intent.getExtras();
         GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(context);
         String messageType = gcm.getMessageType(intent);
